@@ -10,33 +10,33 @@ const SocialLinks = ({ className = "", iconSize = 20 }: SocialLinksProps) => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/username",
+      url: "https://github.com/siddddd17",
       icon: <Github size={iconSize} />,
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/username",
+      url: "https://x.com/mv5ive",
       icon: <Twitter size={iconSize} />,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/username",
+      url: "https://www.linkedin.com/in/siddharthajith/",
       icon: <Linkedin size={iconSize} />,
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/username",
+      url: "https://www.instagram.com/siddddd17/#",
       icon: <Instagram size={iconSize} />,
     },
     {
       name: "Email",
-      url: "mailto:email@example.com",
+      url: "mailto:siddharthajith1717@gmail.com",
       icon: <Mail size={iconSize} />,
     },
   ];
 
   return (
-    <div className={className}>
+    <div className={`flex items-center space-x-5 ${className}`}>
       {socialLinks.map((link) => (
         <a
           key={link.name}

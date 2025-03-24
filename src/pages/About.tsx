@@ -4,8 +4,11 @@ import SectionHeading from "../components/SectionHeading";
 import ParallaxSection from "../components/ParallaxSection";
 import SocialLinks from "../components/SocialLinks";
 import Button from "../components/Button";
-import { Code, Database, Server, Cloud, Cpu, Terminal, GitBranch, Braces, 
-         Award, Briefcase, GraduationCap, Bookmark, Layers, GitCommit } from "lucide-react";
+import ProfileSection from "../components/ProfileSection";
+import { Server, Database, Cloud, Cpu, 
+         GitBranch, Braces, Award, Briefcase, 
+         GraduationCap, Bookmark, Layers, GitCommit,
+         Terminal, Code } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -45,9 +48,16 @@ const About = () => {
     {
       company: "Skellam AI",
       role: "Software Engineer - 1",
-      period: "Oct 2023 - Present",
+      period: "Jan 2024 - Present",
       location: "Karnataka, India",
       description: "Leading backend development and DevOps initiatives, architecting scalable systems using Spring Boot and AWS cloud infrastructure. Implementing CI/CD pipelines with Docker and automated monitoring with Datadog for AI-powered applications."
+    },
+    {
+      company: "Skellam AI",
+      role: "Associate Software Engineer",
+      period: "Oct 2023 - Jan 2024",
+      location: "Karnataka, India",
+      description: "Developed and maintained robust backend services by writing comprehensive unit and integration tests for RESTful APIs. Implemented POS integration solutions, enhancing system interoperability. Contributed to AWS infrastructure management and backend development tasks, ensuring scalable and reliable application performance."
     },
     {
       company: "AI Quantum Solutions Pvt. Ltd",
@@ -79,87 +89,8 @@ const About = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section with Soundwave Animation */}
-      <section className="min-h-screen relative bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Soundwave Animation - Apple AirPods Style */}
-          <div className="soundwave">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div 
-                key={i} 
-                className="soundwave-bar"
-                style={{ 
-                  left: `${5 + i * 5}%`,
-                  animationDelay: `${i * 0.1}s`,
-                  height: `${30 + Math.sin(i/2) * 20}%`,
-                  opacity: 0.6 - (Math.abs(i - 10) * 0.03)
-                }}
-              ></div>
-            ))}
-          </div>
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 pt-40 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
-            <div className="lg:col-span-3">
-              <span className="inline-block mb-4 px-3 py-1 text-xs font-medium bg-gray-100 rounded-full">
-                Backend Developer & DevOps Engineer
-              </span>
-              <h1 className="text-5xl md:text-6xl font-medium mb-6 tracking-tight">
-                Siddharth Ajith
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-                I architect and build robust backend systems and cloud infrastructure, 
-                specializing in Java, Spring Boot, AWS, and exploring the frontiers of AI.
-              </p>
-              <div className="mb-8">
-                <SocialLinks iconSize={24} className="flex space-x-6" />
-              </div>
-              <Button href="#contact">Get in Touch</Button>
-            </div>
-            
-            <div className="lg:col-span-2 relative">
-              <div className="w-full aspect-square rounded-2xl bg-white shadow-xl p-6 relative z-10">
-                <div className="w-full h-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden relative">
-                  {/* Code background pattern */}
-                  <div className="absolute inset-0 opacity-5 flex items-center justify-center overflow-hidden">
-                    <pre className="text-[0.4rem] text-left p-4 transform scale-90">
-                      {`package com.example.demo;
-                        
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration;
-
-@SpringBootApplication(exclude = {ContextStackAutoConfiguration.class})
-public class DemoApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-}
-
-@RestController
-@RequestMapping("/api")
-public class DataController {
-    @GetMapping("/data")
-    public ResponseEntity<List<DataDto>> getData() {
-        return ResponseEntity.ok(dataService.getAllData());
-    }
-}`}
-                    </pre>
-                  </div>
-                  
-                  {/* Profile initial */}
-                  <div className="text-9xl font-medium text-black/10 relative z-10">S</div>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-48 h-48 bg-gray-200/50 rounded-full z-0 blur-md"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gray-300/50 rounded-xl z-0 blur-md"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Soundwave Animation and Profile Picture */}
+      <ProfileSection />
 
       {/* Experience Section */}
       <ParallaxSection className="py-24 bg-white" withPolygons={true}>
@@ -301,7 +232,7 @@ public class DataController {
         </div>
       </ParallaxSection>
       
-      {/* Skills Section */}
+      {/* Skills Section - Enhanced with better readability and hover effects */}
       <ParallaxSection className="py-24 bg-gray-50" direction="down" intensity="medium">
         <div className="container mx-auto px-6">
           <SectionHeading 
@@ -312,7 +243,7 @@ public class DataController {
           
           <div className="max-w-4xl mx-auto mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow hover:translate-y-[-5px] transition-transform duration-300">
                 <h4 className="font-medium mb-4 flex items-center">
                   <Terminal className="h-4 w-4 mr-2" /> Programming
                 </h4>
@@ -322,14 +253,14 @@ public class DataController {
                 <p className="text-sm font-medium">C++ • JavaScript • Bash</p>
               </div>
               
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow hover:translate-y-[-5px] transition-transform duration-300">
                 <h4 className="font-medium mb-4 flex items-center">
                   <Code className="h-4 w-4 mr-2" /> Frameworks
                 </h4>
                 <p className="text-sm font-medium">SpringBoot • Angular • MySQL</p>
               </div>
               
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow hover:translate-y-[-5px] transition-transform duration-300">
                 <h4 className="font-medium mb-4 flex items-center">
                   <Cloud className="h-4 w-4 mr-2" /> Cloud & DevOps
                 </h4>
@@ -344,13 +275,13 @@ public class DataController {
             {skills.map((skill, index) => (
               <div 
                 key={index} 
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:translate-y-[-5px]"
+                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:translate-y-[-8px] group"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg mb-4 group-hover:bg-gray-200 transition-colors">
                   {skill.icon}
                 </div>
-                <h3 className="text-xl font-medium mb-2">{skill.name}</h3>
-                <p className="text-gray-600">{skill.description}</p>
+                <h3 className="text-xl font-medium mb-3 group-hover:text-black transition-colors">{skill.name}</h3>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors">{skill.description}</p>
               </div>
             ))}
           </div>

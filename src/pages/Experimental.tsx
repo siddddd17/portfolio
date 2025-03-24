@@ -1,4 +1,3 @@
-
 import MainLayout from "../layouts/MainLayout";
 import SectionHeading from "../components/SectionHeading";
 import ExperimentCard from "../components/ExperimentCard";
@@ -17,54 +16,54 @@ const Experimental = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Sample experiments data
+  // Updated experiments data focused on AI, Backend Engineering, and Mathematics
   const experiments = [
     {
-      title: "Interactive 3D Physics Simulation",
-      description: "Exploring WebGL and Three.js to create interactive 3D physics simulations in the browser",
-      technologies: ["Three.js", "WebGL", "React", "Physics Engine"],
+      title: "Distributed ML Training Pipeline",
+      description: "Building a scalable distributed system for training large language models across multiple GPU clusters",
+      technologies: ["Kubernetes", "PyTorch", "CUDA", "RabbitMQ", "Docker"],
       link: "https://github.com",
     },
     {
-      title: "AI-driven Content Generation",
-      description: "Experimenting with GPT-3 to generate creative content and explore the boundaries of AI assistance",
-      technologies: ["OpenAI API", "Next.js", "NLP", "Python"],
+      title: "Adaptive Microservices Architecture",
+      description: "Experimental architecture that dynamically scales and adapts microservices based on real-time traffic patterns",
+      technologies: ["Spring Boot", "Service Mesh", "Istio", "gRPC", "Prometheus"],
       link: "https://github.com",
     },
     {
-      title: "Gesture Recognition System",
-      description: "Using computer vision to recognize hand gestures and translate them into interface commands",
-      technologies: ["TensorFlow.js", "Computer Vision", "WebRTC", "Canvas API"],
+      title: "Neural Network Optimization Algorithms",
+      description: "Exploring novel mathematical approaches to optimize neural network convergence and reduce training time",
+      technologies: ["Python", "TensorFlow", "Mathematical Modeling", "Calculus", "Optimization"],
       link: "https://github.com",
     },
     {
-      title: "Generative Art Algorithms",
-      description: "Creating algorithmic art using mathematical principles and randomization",
-      technologies: ["P5.js", "Canvas API", "Algorithms", "Generative Design"],
+      title: "Serverless ETL for Real-time Analytics",
+      description: "Building event-driven, serverless data pipelines that transform and analyze data in near real-time",
+      technologies: ["AWS Lambda", "Kinesis", "DynamoDB", "Apache Flink", "Terraform"],
       link: "https://github.com",
     },
     {
-      title: "Voice-Controlled Home Automation",
-      description: "Building a voice recognition system for smart home control with privacy-focused processing",
-      technologies: ["WebSpeech API", "IoT", "Node.js", "MQTT"],
+      title: "Graph Theory for Network Optimization",
+      description: "Applying advanced graph algorithms to optimize cloud infrastructure networking and reduce latency",
+      technologies: ["Graph Algorithms", "Network Theory", "Python", "Neo4j", "AWS"],
       link: "https://github.com",
     },
     {
-      title: "Interactive Data Visualization",
-      description: "Exploring novel ways to visualize complex datasets through interactive and immersive interfaces",
-      technologies: ["D3.js", "SVG", "WebGL", "Data Processing"],
+      title: "Quantum-Inspired Algorithms",
+      description: "Implementing classical algorithms inspired by quantum computing principles for optimization problems",
+      technologies: ["Quantum Computing", "Python", "Linear Algebra", "Optimization", "NumPy"],
       link: "https://github.com",
     },
     {
-      title: "AR Web Experiences",
-      description: "Creating augmented reality experiences that run directly in the browser without requiring an app",
-      technologies: ["WebXR", "AR.js", "Three.js", "JavaScript"],
+      title: "Zero-Knowledge Proof Systems",
+      description: "Experimenting with cryptographic protocols that enable verification without revealing underlying data",
+      technologies: ["Cryptography", "Zero-Knowledge Proofs", "Blockchain", "Java", "Rust"],
       link: "https://github.com",
     },
     {
-      title: "Custom CSS Animation Engine",
-      description: "Building a lightweight animation engine for complex CSS animations with precise timing control",
-      technologies: ["CSS", "JavaScript", "Web Animation API", "GSAP"],
+      title: "Differential Privacy in ML Models",
+      description: "Techniques for training machine learning models that preserve privacy while maintaining utility",
+      technologies: ["Differential Privacy", "TensorFlow Privacy", "Statistics", "Python", "Data Science"],
       link: "https://github.com",
     },
   ];
@@ -72,11 +71,11 @@ const Experimental = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gray-50">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-6xl font-medium mb-6">Experimental Lab</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A playground for exploring new technologies, pushing boundaries, and learning through experimentation.
+            Where backend engineering, mathematical concepts, and AI research converge to create innovative solutions.
           </p>
         </div>
       </section>
@@ -89,34 +88,97 @@ const Experimental = () => {
             subtitle="Interactive Demo"
           />
           
-          <div className="bg-gray-100 rounded-xl p-6 md:p-10 h-72 md:h-96 flex items-center justify-center">
+          <div className="bg-gray-50 rounded-xl p-6 md:p-10 h-72 md:h-96 flex items-center justify-center overflow-hidden relative">
             {isLoading ? (
               <div className="animate-pulse flex flex-col items-center">
                 <div className="h-16 w-16 bg-gray-300 rounded-full mb-4"></div>
                 <div className="h-4 w-32 bg-gray-300 rounded"></div>
               </div>
             ) : (
-              <div className="text-center">
-                <h3 className="text-xl mb-4">Interactive Canvas Experiment</h3>
-                <p className="text-gray-600 mb-6">Move your mouse or touch the screen to interact</p>
-                <div 
-                  id="canvas-container" 
-                  className="w-full h-40 bg-white rounded-lg shadow-inner overflow-hidden"
-                >
-                  {/* Canvas would be inserted here with JavaScript */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    Interactive canvas demo
+              <div className="text-center relative z-10 w-full">
+                <h3 className="text-xl mb-4">Neural Network Visualization</h3>
+                <p className="text-gray-600 mb-6">A real-time visualization of a neural network training process</p>
+                
+                <div className="flex justify-center w-full">
+                  <div className="neural-network-visualization">
+                    {/* Neural Network Layers Visualization */}
+                    <div className="flex space-x-16 md:space-x-20 justify-center items-center max-w-2xl mx-auto">
+                      {/* Input Layer */}
+                      <div className="flex flex-col space-y-4">
+                        {[...Array(4)].map((_, i) => (
+                          <div 
+                            key={`input-${i}`} 
+                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/80"
+                            style={{
+                              animation: `pulse 1.5s infinite ${i * 0.2}s`,
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                      
+                      {/* Hidden Layer 1 */}
+                      <div className="flex flex-col space-y-4">
+                        {[...Array(6)].map((_, i) => (
+                          <div 
+                            key={`hidden1-${i}`} 
+                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/70"
+                            style={{
+                              animation: `pulse 1.8s infinite ${i * 0.15}s`,
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                      
+                      {/* Hidden Layer 2 */}
+                      <div className="flex flex-col space-y-4">
+                        {[...Array(5)].map((_, i) => (
+                          <div 
+                            key={`hidden2-${i}`} 
+                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/70"
+                            style={{
+                              animation: `pulse 2s infinite ${i * 0.1}s`,
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                      
+                      {/* Output Layer */}
+                      <div className="flex flex-col space-y-4">
+                        {[...Array(2)].map((_, i) => (
+                          <div 
+                            key={`output-${i}`} 
+                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/90"
+                            style={{
+                              animation: `pulse 1.2s infinite ${i * 0.3}s`,
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             )}
+            
+            {/* Animated background */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30"></div>
+              <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.2)" strokeWidth="0.5"></path>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
       
       {/* Experiments Grid */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
           <SectionHeading 
             title="Experimental Projects" 
             subtitle="R&D Work"
@@ -140,7 +202,7 @@ const Experimental = () => {
       </section>
       
       {/* Approach Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <SectionHeading 
@@ -150,8 +212,7 @@ const Experimental = () => {
             
             <div className="space-y-6 text-gray-700">
               <p>
-                Experimentation is at the core of my creative and technical process. Rather than being bound 
-                by established patterns, I believe in exploring the edges of what's possible to discover new solutions.
+                Experimentation is at the core of my creative and technical process. Rather than being bound by established patterns, I believe in exploring the edges of what's possible to discover new solutions.
               </p>
               
               <p>
@@ -160,26 +221,21 @@ const Experimental = () => {
               
               <ul className="list-disc pl-6 space-y-2">
                 <li>
-                  <strong>Research & Exploration:</strong> I begin by deeply researching emerging technologies 
-                  and techniques, understanding their capabilities and limitations.
+                  <strong>Research & Exploration:</strong> I begin by deeply researching emerging technologies and techniques, understanding their capabilities and limitations.
                 </li>
                 <li>
-                  <strong>Rapid Prototyping:</strong> Building quick, focused prototypes allows me to test concepts 
-                  without getting bogged down in implementation details.
+                  <strong>Rapid Prototyping:</strong> Building quick, focused prototypes allows me to test concepts without getting bogged down in implementation details.
                 </li>
                 <li>
-                  <strong>Iterative Testing:</strong> I constantly test my assumptions, refine approaches, and 
-                  explore alternative solutions.
+                  <strong>Iterative Testing:</strong> I constantly test my assumptions, refine approaches, and explore alternative solutions.
                 </li>
                 <li>
-                  <strong>Knowledge Integration:</strong> Successful experiments inform my broader work, while 
-                  failures provide equally valuable insights.
+                  <strong>Knowledge Integration:</strong> Successful experiments inform my broader work, while failures provide equally valuable insights.
                 </li>
               </ul>
               
               <p>
-                This experimental mindset keeps my skills sharp and my solutions innovative, ensuring I'm 
-                always pushing the boundaries of what's possible in digital design and development.
+                This experimental mindset keeps my skills sharp and my solutions innovative, ensuring I'm always pushing the boundaries of what's possible in digital design and development.
               </p>
             </div>
           </div>
@@ -191,7 +247,7 @@ const Experimental = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-medium mb-6">Interested in collaborating on experiments?</h2>
           <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-            I'm always looking for fellow creators and developers to collaborate with on experimental projects.
+            I'm always looking to collaborate with fellow engineers and researchers on challenging technical problems.
           </p>
           <Button 
             href="/about#contact" 
@@ -201,6 +257,14 @@ const Experimental = () => {
           </Button>
         </div>
       </section>
+      
+      {/* CSS for animations */}
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.1); opacity: 0.8; }
+        }
+      `}</style>
     </MainLayout>
   );
 };

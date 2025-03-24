@@ -67,12 +67,17 @@ const Blog = () => {
     },
   ];
   
-  // Filter blog posts based on search query
-  const filteredPosts = blogPosts.filter((post) =>
-    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
+  // Filter blog posts based on search query - improved to be more effective
+  const filteredPosts = searchQuery.trim() === "" 
+    ? blogPosts 
+    : blogPosts.filter((post) => {
+        const searchLower = searchQuery.toLowerCase();
+        return (
+          post.title.toLowerCase().includes(searchLower) ||
+          post.excerpt.toLowerCase().includes(searchLower) ||
+          post.tags.some(tag => tag.toLowerCase().includes(searchLower))
+        );
+      });
 
   return (
     <MainLayout>
@@ -148,8 +153,8 @@ const Blog = () => {
       </section>
       
       {/* Blog Posts Grid */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
           <SectionHeading 
             title="Latest Articles" 
             subtitle="Technical Insights"

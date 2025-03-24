@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,12 +46,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link 
-          to="/" 
-          className="text-xl font-medium tracking-tight hover:opacity-80 transition-opacity"
-        >
-          Siddharth Ajith
-        </Link>
+        <Logo animated={!isScrolled} />
 
         {/* Desktop Navigation */}
         {!isMobile && (

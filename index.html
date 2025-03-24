@@ -1,22 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Siddharth Ajith</title>
-    <meta name="description" content="Siddharth's Portfolio Website" />
-    <meta name="author" content="Siddharth" />
+    <title>Siddharth Ajith - Backend Developer & DevOps Engineer</title>
+    <meta name="description" content="Backend Developer, DevOps Engineer, and AI Enthusiast" />
+    <meta name="author" content="Siddharth Ajith" />
 
-    <meta property="og:title" content="Siddharth Ajith" />
-    <meta property="og:description" content="Siddharth's Portfolio Website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta property="og:title" content="Siddharth Ajith - Backend Developer & DevOps Engineer" />
+    <meta property="og:description" content="Backend Developer, DevOps Engineer, and AI Enthusiast" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@siddharthajith" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <style>
+      /* Global animation styles */
+      @keyframes draw-line {
+        0% { stroke-dashoffset: 300; }
+        100% { stroke-dashoffset: 0; }
+      }
+      
+      @keyframes soundwave-anim {
+        0%, 100% { transform: scaleY(0.5); }
+        50% { transform: scaleY(1); }
+      }
+      
+      /* Soundwave animation */
+      .soundwave-bar {
+        position: absolute;
+        bottom: 0;
+        width: 0.5%;
+        background-color: #000;
+        opacity: 0.5;
+        border-radius: 10px 10px 0 0;
+        transform-origin: bottom;
+        animation: soundwave-anim 1.5s ease-in-out infinite;
+      }
+    </style>
   </head>
-  
+
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
