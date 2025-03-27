@@ -1,22 +1,11 @@
+
 import MainLayout from "../layouts/MainLayout";
 import SectionHeading from "../components/SectionHeading";
 import ExperimentCard from "../components/ExperimentCard";
 import Button from "../components/Button";
-import { useEffect, useState } from "react";
+import AIFunctionVisualizer from "../components/AIFunctionVisualizer";
 
 const Experimental = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  
-  useEffect(() => {
-    // Simulate loading (would be replaced with actual data fetching)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
-    
-    return () => clearTimeout(timer);
-  }, []);
-  
-  // Updated experiments data focused on AI, Backend Engineering, and Mathematics
   const experiments = [
     {
       title: "Distributed ML Training Pipeline",
@@ -70,7 +59,6 @@ const Experimental = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-6xl font-medium mb-6">Experimental Lab</h1>
@@ -80,103 +68,17 @@ const Experimental = () => {
         </div>
       </section>
       
-      {/* Interactive Demo */}
       <section className="py-24 bg-white border-b border-gray-200">
         <div className="container mx-auto px-6">
           <SectionHeading 
-            title="Featured Experiment" 
-            subtitle="Interactive Demo"
+            title="AI Function Visualizer" 
+            subtitle="Interact with common neural network activation functions"
           />
           
-          <div className="bg-gray-50 rounded-xl p-6 md:p-10 h-72 md:h-96 flex items-center justify-center overflow-hidden relative">
-            {isLoading ? (
-              <div className="animate-pulse flex flex-col items-center">
-                <div className="h-16 w-16 bg-gray-300 rounded-full mb-4"></div>
-                <div className="h-4 w-32 bg-gray-300 rounded"></div>
-              </div>
-            ) : (
-              <div className="text-center relative z-10 w-full">
-                <h3 className="text-xl mb-4">Neural Network Visualization</h3>
-                <p className="text-gray-600 mb-6">A real-time visualization of a neural network training process</p>
-                
-                <div className="flex justify-center w-full">
-                  <div className="neural-network-visualization">
-                    {/* Neural Network Layers Visualization */}
-                    <div className="flex space-x-16 md:space-x-20 justify-center items-center max-w-2xl mx-auto">
-                      {/* Input Layer */}
-                      <div className="flex flex-col space-y-4">
-                        {[...Array(4)].map((_, i) => (
-                          <div 
-                            key={`input-${i}`} 
-                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/80"
-                            style={{
-                              animation: `pulse 1.5s infinite ${i * 0.2}s`,
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                      
-                      {/* Hidden Layer 1 */}
-                      <div className="flex flex-col space-y-4">
-                        {[...Array(6)].map((_, i) => (
-                          <div 
-                            key={`hidden1-${i}`} 
-                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/70"
-                            style={{
-                              animation: `pulse 1.8s infinite ${i * 0.15}s`,
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                      
-                      {/* Hidden Layer 2 */}
-                      <div className="flex flex-col space-y-4">
-                        {[...Array(5)].map((_, i) => (
-                          <div 
-                            key={`hidden2-${i}`} 
-                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/70"
-                            style={{
-                              animation: `pulse 2s infinite ${i * 0.1}s`,
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                      
-                      {/* Output Layer */}
-                      <div className="flex flex-col space-y-4">
-                        {[...Array(2)].map((_, i) => (
-                          <div 
-                            key={`output-${i}`} 
-                            className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-black/90"
-                            style={{
-                              animation: `pulse 1.2s infinite ${i * 0.3}s`,
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            {/* Animated background */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30"></div>
-              <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.2)" strokeWidth="0.5"></path>
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-              </svg>
-            </div>
-          </div>
+          <AIFunctionVisualizer />
         </div>
       </section>
       
-      {/* Experiments Grid */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <SectionHeading 
@@ -201,7 +103,6 @@ const Experimental = () => {
         </div>
       </section>
       
-      {/* Approach Section */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
@@ -242,7 +143,6 @@ const Experimental = () => {
         </div>
       </section>
       
-      {/* Call to Action */}
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-medium mb-6">Interested in collaborating on experiments?</h2>
@@ -258,7 +158,6 @@ const Experimental = () => {
         </div>
       </section>
       
-      {/* CSS for animations */}
       <style>{`
         @keyframes pulse {
           0%, 100% { transform: scale(1); opacity: 1; }

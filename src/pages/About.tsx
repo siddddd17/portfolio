@@ -8,7 +8,7 @@ import ProfileSection from "../components/ProfileSection";
 import { Server, Database, Cloud, Cpu, 
          GitBranch, Braces, Award, Briefcase, 
          GraduationCap, Bookmark, Layers, GitCommit,
-         Terminal, Code } from "lucide-react";
+         Terminal, Code, Building } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -47,24 +47,30 @@ const About = () => {
   const experiences = [
     {
       company: "Skellam AI",
-      role: "Software Engineer - 1",
-      period: "Jan 2024 - Present",
-      location: "Karnataka, India",
-      description: "Leading backend development and DevOps initiatives, architecting scalable systems using Spring Boot and AWS cloud infrastructure. Implementing CI/CD pipelines with Docker and automated monitoring with Datadog for AI-powered applications."
-    },
-    {
-      company: "Skellam AI",
-      role: "Associate Software Engineer",
-      period: "Oct 2023 - Jan 2024",
-      location: "Karnataka, India",
-      description: "Developed and maintained robust backend services by writing comprehensive unit and integration tests for RESTful APIs. Implemented POS integration solutions, enhancing system interoperability. Contributed to AWS infrastructure management and backend development tasks, ensuring scalable and reliable application performance."
+      roles: [
+        {
+          title: "Software Engineer - 1",
+          period: "Jan 2024 - Present",
+          description: "Leading backend development and DevOps initiatives, architecting scalable systems using Spring Boot and AWS cloud infrastructure. Implementing CI/CD pipelines with Docker and automated monitoring with Datadog for AI-powered applications."
+        },
+        {
+          title: "Associate Software Engineer",
+          period: "Oct 2023 - Jan 2024",
+          description: "Developed and maintained robust backend services by writing comprehensive unit and integration tests for RESTful APIs. Implemented POS integration solutions, enhancing system interoperability. Contributed to AWS infrastructure management and backend development tasks, ensuring scalable and reliable application performance."
+        }
+      ],
+      location: "Karnataka, India"
     },
     {
       company: "AI Quantum Solutions Pvt. Ltd",
-      role: "Intern",
-      period: "April 2023 - May 2023",
-      location: "Karnataka, India",
-      description: "Implemented natural language processing models for sentiment analysis, comparing performance of neural networks, CNNs, and LSTMs using the IMDB dataset. Gained expertise in data preprocessing, model training, and evaluation methodologies for AI applications."
+      roles: [
+        {
+          title: "Intern",
+          period: "April 2023 - May 2023",
+          description: "Implemented natural language processing models for sentiment analysis, comparing performance of neural networks, CNNs, and LSTMs using the IMDB dataset. Gained expertise in data preprocessing, model training, and evaluation methodologies for AI applications."
+        }
+      ],
+      location: "Karnataka, India"
     }
   ];
 
@@ -115,23 +121,30 @@ const About = () => {
                   </div>
                   
                   <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-medium">{exp.role}</h3>
-                        <p className="text-lg text-gray-800">{exp.company}</p>
-                      </div>
-                      <div className="text-gray-600 mt-2 md:mt-0">
-                        <span className="flex items-center md:justify-end">
-                          <Briefcase className="h-4 w-4 mr-2" />
-                          {exp.period}
-                        </span>
-                        <span className="flex items-center md:justify-end mt-1">
-                          <Layers className="h-4 w-4 mr-2" />
-                          {exp.location}
-                        </span>
+                        <h3 className="text-xl font-medium flex items-center">
+                          <Building className="h-5 w-5 mr-2" />
+                          {exp.company}
+                        </h3>
+                        <p className="text-gray-600 text-sm ml-7">{exp.location}</p>
                       </div>
                     </div>
-                    <p className="text-gray-600">{exp.description}</p>
+                    
+                    {/* Roles at this company */}
+                    <div className="ml-7 space-y-6 mt-4">
+                      {exp.roles.map((role, roleIndex) => (
+                        <div key={roleIndex} className="border-l-2 border-gray-200 pl-4 pb-2">
+                          <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h4 className="text-lg font-medium">{role.title}</h4>
+                            <span className="text-gray-600 text-sm md:text-base">
+                              {role.period}
+                            </span>
+                          </div>
+                          <p className="text-gray-600">{role.description}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
