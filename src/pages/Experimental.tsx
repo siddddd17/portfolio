@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import SectionHeading from "../components/SectionHeading";
 import ExperimentCard from "../components/ExperimentCard";
 import Button from "../components/Button";
-import AIFunctionVisualizer from "../components/AIFunctionVisualizer";
+import ThreeDFunctionVisualizer from "../components/ThreeDFunctionVisualizer";
 
 const Experimental = () => {
   const experiments = [
@@ -71,11 +71,11 @@ const Experimental = () => {
       <section className="py-24 bg-white border-b border-gray-200">
         <div className="container mx-auto px-6">
           <SectionHeading 
-            title="AI Function Visualizer" 
-            subtitle="Interact with common neural network activation functions"
+            title="Neural Network Activation Functions" 
+            subtitle="Interactive 3D Visualization"
           />
           
-          <AIFunctionVisualizer />
+          <ThreeDFunctionVisualizer />
         </div>
       </section>
       
